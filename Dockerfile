@@ -14,8 +14,7 @@ RUN apt-get update \
     && apt-get install -y libpng-dev
 
 # Install PHP extensions
-RUN docker-php-ext-install \
-    && docker-php-ext-install curl \
+RUN docker-php-ext-install curl \
     && docker-php-ext-install gd \
     && docker-php-ext-install soap \
     && docker-php-ext-install imap \
