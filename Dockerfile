@@ -18,7 +18,6 @@ RUN apt-get update \
 RUN docker-php-ext-install curl \
     && docker-php-ext-install gd \
     && docker-php-ext-install soap \
-    && docker-php-ext-install imap \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install iconv \
     && docker-php-ext-install mbstring \
