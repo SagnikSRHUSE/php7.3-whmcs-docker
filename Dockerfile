@@ -10,8 +10,18 @@ RUN apt-get update \
     && apt-get dist-upgrade -y \
     && apt-get autoremove -y \
     && apt-get autoclean \
-    && apt-get install -y libcurl4-openssl-dev
+    && apt-get install -y libcurl4-openssl-dev \
+    && apt-get install -y libpng-dev
 
 # Install PHP extensions
-RUN docker-php-ext-install curl gd soap imap pdo_mysql iconv mbstring openssl bcmath
+RUN docker-php-ext-install \
+    && docker-php-ext-install curl \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install soap \
+    && docker-php-ext-install imap \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install iconv \
+    && docker-php-ext-install mbstring \
+    && docker-php-ext-install openssl \
+    && docker-php-ext-install bcmath
 
