@@ -24,7 +24,6 @@ RUN docker-php-ext-install curl \
     && docker-php-ext-install bcmath
 
 # Install ioncube
-
 RUN curl -o ioncube.tar.gz https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz \
     && tar -xvzf ioncube.tar.gz \
     && mv ioncube/ioncube_loader_lin_7.3.so `php-config --extension-dir` \
