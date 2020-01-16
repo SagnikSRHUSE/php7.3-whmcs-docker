@@ -12,9 +12,8 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get install -y libcurl4-openssl-dev \
     && apt-get install -y libpng-dev \
-    && apt-get install -y libxml2-dev \
-    && apt-get install -y libssl-dev
-
+    && apt-get install -y libxml2-dev 
+    
 # Install PHP extensions
 RUN docker-php-ext-install curl \
     && docker-php-ext-install gd \
