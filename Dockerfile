@@ -21,7 +21,6 @@ RUN docker-php-ext-install curl \
     && docker-php-ext-install soap \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install iconv \
-    && docker-php-ext-install mbstring \
     && docker-php-ext-install openssl \
     && docker-php-ext-install bcmath
 
