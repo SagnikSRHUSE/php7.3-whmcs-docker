@@ -12,7 +12,7 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get install -y libcurl4-openssl-dev \
     && apt-get install -y libpng-dev \
-    && apt-get install -y libxml2-dev 
+    && apt-get install -y libxml2-dev
     
 # Install PHP extensions
 RUN docker-php-ext-install curl \
@@ -20,6 +20,5 @@ RUN docker-php-ext-install curl \
     && docker-php-ext-install soap \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install iconv \
-    && docker-php-ext-install openssl \
+    && docker-php-ext-install mbstring \
     && docker-php-ext-install bcmath
-
