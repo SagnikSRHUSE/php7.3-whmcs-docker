@@ -4,5 +4,5 @@ MAINTAINER Sagnik Sasmal, <sagnik@sagnik.me>
 
 # Install PHP extensions
 
-RUN docker-php-ext-install curl gd2 soap imap pdo_mysql iconv mbstring openssl bcmath
+RUN docker-php-ext-install curl gd soap imap pdo_mysql iconv mbstring openssl bcmath
 
