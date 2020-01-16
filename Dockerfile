@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install dependencies
 RUN apt-get update \
     && apt-get dist-upgrade -y \
-    && apt-get  autoremove \
+    && apt-get autoremove -y \
     && apt-get autoclean \
     && apt-get install -y curl
 
