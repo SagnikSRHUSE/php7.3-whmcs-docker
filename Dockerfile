@@ -15,7 +15,7 @@ RUN apt-get update \
     && apt-get install -y libxml2-dev \
     && apt-get install -y cron \
     && apt-get install -y libc-client-dev \
-    l&& apt-get install -y ibkrb5-dev
+    && apt-get install -y libkrb5-dev
     
 # Install PHP extensions
 RUN docker-php-ext-install curl \
