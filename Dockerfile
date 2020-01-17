@@ -13,7 +13,9 @@ RUN apt-get update \
     && apt-get install -y libcurl4-openssl-dev \
     && apt-get install -y libpng-dev \
     && apt-get install -y libxml2-dev \
-    && apt-get install -y cron
+    && apt-get install -y cron \
+    && apt-get install -y libc-client-dev \
+    l&& apt-get install -y ibkrb5-dev
     
 # Install PHP extensions
 RUN docker-php-ext-install curl \
@@ -22,7 +24,9 @@ RUN docker-php-ext-install curl \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install iconv \
     && docker-php-ext-install mbstring \
-    && docker-php-ext-install bcmath
+    && docker-php-ext-install bcmath \
+    && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+    && docker-php-ext-install imap
 
 # Install ioncube
 RUN curl -o ioncube.tar.gz https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz \
