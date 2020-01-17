@@ -29,3 +29,9 @@ RUN curl -o ioncube.tar.gz https://downloads.ioncube.com/loader_downloads/ioncub
     && mv ioncube/ioncube_loader_lin_7.3.so $(php-config --extension-dir) \
     && rm -rf ioncube.tar.gz ioncube \
     && docker-php-ext-enable ioncube_loader_lin_7.3
+
+# Setup crons
+RUN (crontab -l ; echo "* * * * * /usr/local/bin/php -q /code/whmcs_crons/cron.php &> /dev/null") | crontab
+RUN (crontab -l ; echo "0 0,12 * * * /usr/local/bin/php -q /code/public/modules/registrars/namesilo/namesilo-sync.php &> /dev/null") | crontab
+RUN (crontab -l ; echo "*/5 * * * * /usr/local/bin/php -q /code/whmcs_crons/pop.php &> /dev/null") | crontab
+
