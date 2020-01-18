@@ -25,6 +25,7 @@ RUN docker-php-ext-install curl \
     && docker-php-ext-install iconv \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install bcmath \
+    && docker-php-ext-install mysqli \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install imap
 
